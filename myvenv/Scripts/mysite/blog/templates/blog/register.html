@@ -1,0 +1,57 @@
+<?php
+   define('DB_SERVER', 'localhost:3036');
+   define('DB_USERNAME', 'root');
+   define('DB_PASSWORD', 'rootpassword');
+   define('DB_DATABASE', 'database');
+   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+?>
+
+
+
+
+
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Register Now!</title>
+        <link rel="stylesheet" type="text/css" href="trial.css">
+        <link rel="shortcut icon" href="c1.jfif" />
+    </head>
+
+    <body>
+
+        <form method="post" action="register.php">
+            <div class="login-box">
+                <img src="regback.jpe" class="df">
+                <h1 style="text-align: center">Sign Up </h1>
+                <form>
+                    <p>Enter a Username</p>
+                    <input type="text" name="" placeholder="Enter Username">
+                    <p>Choose a Password </p>
+                    <input type="Password" name="" placeholder="Enter Password" id="pass1">
+                    <p> Re-enter Password </p>
+                    <input type="Password" name="" placeholder="Re Enter Password " id="pass2" onkeyup="checkpass(); return false;">
+                    <span id="confirmMessage" class="confirmMessage"></span>
+                    <script type="text/javascript">
+                        function checkpass() {
+                            var pass1 = document.getElementById('pass1');
+                            var pass2 = document.getElementById('pass2');
+                            var message = document.getElementById('confirmMessage');
+
+                            var goodcolor = "#66cc66";
+                            var badcolor = "#ff6666";
+                            if (pass1.value == pass2.value) {
+                                message.innerHTML("Password matches");
+                            } else {
+                                message.innerHTML("Passwords do not match");
+                            }
+                    </script>
+
+                    <input type="submit" name="" value="Sign Up">
+
+                </form>
+    </body>
+
+    </html>
